@@ -39,25 +39,31 @@ puts "Counters updated!"
 
 # User Model: Returns 3 most recent posts for a user
 last_posts = first_user.recent_posts
-puts "Last posts for user #{first_user.name}: "
-last_posts.each do |item|
-  puts "Post #{item.id} | #{item.title} | #{item.text}"
+puts "Recent Posts for User: #{first_user.name}"
+last_posts.each do |post|
+  puts "Post ID: #{post.id} | Title: #{post.title} | Text: #{post.text}"
 end
 
 # Method that updates the posts counter for a user
-puts "Posts counter for user #{first_user.name}: #{first_user.posts_counter}"
+puts "Updating Posts Counter for User: #{first_user.name}"
+first_user.update_posts_counter
+puts "Posts Counter for User: #{first_user.name}: #{first_user.posts_counter}"
 
 # Method which returns the 5 most recent comments for a given post
 post_with_comments = Post.find_by(title: 'Hello')
-post_author = post_with_comments.author.name
+post_author_name = post_with_comments.author.name
 last_comments = post_with_comments.recent_comments
-puts "Last comments in '#{post_with_comments.title}' by '#{post_author}' for user: '#{post_with_comments.author.name}': "
-last_comments.each do |item|
-  puts "Comment #{item.id} | #{item.text}"
+puts "Recent Comments for Post '#{post_with_comments.title}' by '#{post_author_name}': "
+last_comments.each do |comment|
+  puts "Comment ID: #{comment.id} | Text: #{comment.text}"
 end
 
 # Method that updates the comments counter for a post
+puts "Updating Comments Counter for Post '#{post_with_comments.title}'"
+post_with_comments.update_comments_counter
 puts "There are #{post_with_comments.comments_counter} comments for post '#{post_with_comments.title}'"
 
 # Method that updates the likes counter for a post
+puts "Updating Likes Counter for Post '#{post_with_comments.title}'"
+post_with_comments.update_likes_count
 puts "There are #{post_with_comments.likes_counter} likes for post '#{post_with_comments.title}'"
