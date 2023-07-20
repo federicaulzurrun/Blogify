@@ -6,15 +6,7 @@ class Post < ApplicationRecord
   after_create :update_posts_counter
 
   def update_posts_counter
-    update(comments_counter: comments.count)
-  end
-
-  def update_comments_counter
-    update(comments_counter: comments.count)
-  end
-
-  def update_likes_count
-    update(likes_counter: likes.count)
+    author.update(posts_counter: author.posts.count)
   end
 
   def recent_comments

@@ -30,12 +30,10 @@ Comment.create(post: first_post, author: first_user, text: 'Glad you liked it!')
 Comment.create(post: first_post, author: second_user, text: 'Looking forward to more posts!')
 puts "Comments created!"
 
-# Update counters
-puts "Updating counters..."
-first_user.update_posts_counter
-first_post.update_comments_counter
-first_post.update_likes_count
-puts "Counters updated!"
+# Update counters for the post
+puts "Updating counters for the post..."
+first_post.update(comments_counter: first_post.comments.count, likes_counter: first_post.likes.count)
+puts "Counters updated for the post!"
 
 # User Model: Returns 3 most recent posts for a user
 last_posts = first_user.recent_posts
@@ -46,7 +44,7 @@ end
 
 # Method that updates the posts counter for a user
 puts "Updating Posts Counter for User: #{first_user.name}"
-first_user.update_posts_counter
+first_user.update(posts_counter: first_user.posts.count)
 puts "Posts Counter for User: #{first_user.name}: #{first_user.posts_counter}"
 
 # Method which returns the 5 most recent comments for a given post
@@ -60,10 +58,10 @@ end
 
 # Method that updates the comments counter for a post
 puts "Updating Comments Counter for Post '#{post_with_comments.title}'"
-post_with_comments.update_comments_counter
+post_with_comments.update(comments_counter: post_with_comments.comments.count)
 puts "There are #{post_with_comments.comments_counter} comments for post '#{post_with_comments.title}'"
 
 # Method that updates the likes counter for a post
 puts "Updating Likes Counter for Post '#{post_with_comments.title}'"
-post_with_comments.update_likes_count
+post_with_comments.update(likes_counter: post_with_comments.likes.count)
 puts "There are #{post_with_comments.likes_counter} likes for post '#{post_with_comments.title}'"
