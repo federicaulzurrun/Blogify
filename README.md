@@ -119,7 +119,8 @@ To run tests, run the following command:
   rspec spec
 ```
 
-### Usage
+### Deployment
+
 To deploy the project locally, run the following command:
 
 ```sh
@@ -135,13 +136,6 @@ To deploy the project locally, run the following command:
 - GitHub: [@federicaulzurrun](https://github.com/federicaulzurrun)
 - Twitter: [@ulzurrunfede](https://mobile.twitter.com/ulzurrunfede)
 - LinkedIn: [Federica Ulzurrun](https://www.linkedin.com/in/federicaulzurrun/)
-
-
-👤 **Oscar Villagran**
-
-- GitHub: [@oovillagran](https://github.com/oovillagran)
-- Twitter: [@oovillagran](https://twitter.com/oovillagran)
-- LinkedIn: [Oscar Villagran](https://www.linkedin.com/in/oovillagran/)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
