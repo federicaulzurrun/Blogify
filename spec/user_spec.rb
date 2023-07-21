@@ -30,13 +30,16 @@ RSpec.describe User, type: :model do
 
   context '#recent_posts' do
     it 'returns the three most recent posts' do
-
-      third_post = Post.create(author: subject, title: 'Third', text: 'Third Post', comments_counter: 0, likes_counter: 0, created_at: 3.days.ago)
-      second_post = Post.create(author: subject, title: 'Second', text: 'Second Post', comments_counter: 0, likes_counter: 0, created_at: 2.days.ago)
-      first_post = Post.create(author: subject, title: 'First', text: 'First Post', comments_counter: 0, likes_counter: 0, created_at: 1.day.ago)
+      third_post = Post.create(author: subject, title: 'Third', text: 'Third Post', comments_counter: 0,
+                               likes_counter: 0, created_at: 3.days.ago)
+      second_post = Post.create(author: subject, title: 'Second', text: 'Second Post', comments_counter: 0,
+                                likes_counter: 0, created_at: 2.days.ago)
+      first_post = Post.create(author: subject, title: 'First', text: 'First Post', comments_counter: 0,
+                               likes_counter: 0, created_at: 1.day.ago)
 
       other_user = User.create(name: 'Other User', posts_counter: 0)
-      Post.create(author: other_user, title: 'Other User Post', text: 'Other User Post', comments_counter: 0, likes_counter: 0, created_at: 1.day.ago)
+      Post.create(author: other_user, title: 'Other User Post', text: 'Other User Post', comments_counter: 0,
+                  likes_counter: 0, created_at: 1.day.ago)
 
       recent_posts = subject.recent_posts
       expect(recent_posts.length).to eq(3)
@@ -44,7 +47,6 @@ RSpec.describe User, type: :model do
     end
 
     it 'returns empty array when user has no posts' do
-
       expect(subject.posts).to be_empty
 
       recent_posts = subject.recent_posts
@@ -52,9 +54,10 @@ RSpec.describe User, type: :model do
     end
 
     it 'returns fewer than three posts when user has less than three posts' do
-
-      second_post = Post.create(author: subject, title: 'Second', text: 'Second Post', comments_counter: 0, likes_counter: 0, created_at: 2.days.ago)
-      first_post = Post.create(author: subject, title: 'First', text: 'First Post', comments_counter: 0, likes_counter: 0, created_at: 1.day.ago)
+      second_post = Post.create(author: subject, title: 'Second', text: 'Second Post', comments_counter: 0,
+                                likes_counter: 0, created_at: 2.days.ago)
+      first_post = Post.create(author: subject, title: 'First', text: 'First Post', comments_counter: 0,
+                               likes_counter: 0, created_at: 1.day.ago)
 
       recent_posts = subject.recent_posts
       expect(recent_posts.length).to eq(2)
