@@ -20,10 +20,8 @@ RSpec.describe Like, type: :model do
     it 'updates the likes_counter of the associated post after creating a like' do
       expect(post.likes_counter).to eq(0)
 
-      # Create a new like
       subject
 
-      # Expect the likes_counter of the post to be updated
       expect(post.reload.likes_counter).to eq(1)
     end
   end
