@@ -1,2 +1,22 @@
-<h1>Blogify Users</h1>
-<h3>All blogifyers</h3>
+<main>
+  <section>
+  <h1>Blogify Users</h1>
+    <ul class="card-container">
+      <% @users.each do |user| %>
+        <%= link_to user do %>
+          <li class="postCont">
+            <div class="usersCont">
+              <div class="photo-container">
+              <%= image_tag user.photo, class: "user-photo" %>
+              </div>
+              <div class="user-information">
+                <h2><%= user.name %></h2>
+                <p>Number of posts: <%= user.posts_counter %></p>
+              </div>
+            </div>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
+  </section>
+</main>

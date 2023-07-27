@@ -1,15 +1,167 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+* {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.postContainer {
+  margin: 30px 0;
+}
+
+.post {
+  display: flex;
+  flex-direction: column;
+}
+
+.postTitle {
+  font-size: 1.3em;
+  font-weight: bold;
+  margin: 0.5% 1%;
+}
+
+.contSubtitle {
+  font-size: 1.5em;
+}
+
+.postText {
+  font-size: 1.7em;
+  margin: 0.5% 1%;
+}
+
+.postCounters {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+.countText {
+  font-size: 0.8rem;
+}
+
+.btn-container {
+  margin-bottom: 5%;
+  display: flex;
+  align-self: center;
+  justify-content: center;
+}
+
+.btn {
+  background-color: #f9f9f9;
+  color: #000;
+  border: none;
+  border-radius: 4px solid #000;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.3s ease;
+  margin-top: 10px;
+}
+
+.btn:hover {
+  background-color: lightcoral;
+}
+
+.userContainer {
+  padding: 3%;
+  background-color: #fff;
+  border-radius: 2px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+  margin: 20px auto;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  width: 100%;
+}
+
+.usersCont {
+  display: flex;
+}
+
+.card-container {
+  width: 90%;
+  margin: 5%;
+}
+
+.card {
+  padding: 3%;
+  background-color: #fff;
+  border-radius: 2px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+  margin: 20px auto;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.photo-container {
+  border: 1px solid black;
+  height: 5em;
+  width: 5em;
+}
+
+.user-information {
+  width: 90%;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 3%;
+  border: 1px solid black;
+  padding: 2%;
+}
+
+.user-information p {
+  align-self: flex-end;
+}
+
+.biography {
+  margin: 5%;
+  width: 90%;
+  border: 1px solid black;
+  padding: 2%;
+}
+
+.postCont {
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 2px;
+  padding: 15px;
+  margin: 5px 20px;
+}
+
+.postContP {
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 2px;
+  padding: 20px;
+  margin: 8px 20px;
+}
+
+.postP {
+  display: flex;
+  justify-content: space-between;
+}
+
+.postTitleP {
+  font-size: 2rem;
+}
+
+.postCountersP {
+  font-size: 0.5rem;
+  display: flex;
+  width: 30%;
+  justify-content: end;
+  align-self: flex-start;
+}

@@ -6,7 +6,20 @@ class User < ApplicationRecord
   validates :name, presence: true
   validates :posts_counter, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
+  after_create :update_user_posts_counter
+
   def recent_posts
     posts.order(created_at: :desc).limit(3)
+  end
+
+  def last_posts
+    posts.order(created_at: :desc).limit(5)
+  end
+
+  private
+
+  def update_user_posts_counter
+    self.posts_counter = posts.count
+    save
   end
 end
