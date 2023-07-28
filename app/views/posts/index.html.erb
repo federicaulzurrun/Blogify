@@ -18,24 +18,23 @@
             </div>
           </li>
           <div class="postCont">
-              <h3>Comments:</h3>
-              <ul>
-                <% recent_comments = post.comments.last(5) %>
-                <% if recent_comments.any? %>
-                  <% recent_comments.each do |comment| %>
-                    <li>
-                      <p class="commentText"><%= comment.author.name %> : <%= comment.text %></p>
-                    </li>
-                  <% end %>
-                <% else %>
+            <h3>Comments:</h3>
+            <ul>
+              <% if post.recent_comments.any? %>
+                <% post.recent_comments.each do |comment| %>
                   <li>
-                    <p class="commentText">No comments yet.</p>
+                    <p class="commentText"><%= comment.author.name %> : <%= comment.text %></p>
                   </li>
                 <% end %>
-              </ul>
-            </div>
-          <% end %>
+              <% else %>
+                <li>
+                  <p class="commentText">No comments yet.</p>
+                </li>
+              <% end %>
+            </ul>
+          </div>
         </div>
+        <% end %>
       <% end %>
     </ul>
   </div>
