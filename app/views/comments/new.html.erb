@@ -1,0 +1,11 @@
+<%= form_with(model: @comment, url: user_post_comments_path(@post.author, @post)) do |form|%>
+  <div class="postContP">
+    <h4 class="addCom">Add a Comment</h4>
+    <div>
+      <%= form.text_area :text, required: true %>
+    </div>
+  </div>
+  <div class="shareIt">
+    <%= form.submit 'Share it!', class: "btn" %>
+  </div>
+<% end %>
