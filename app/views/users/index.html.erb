@@ -1,6 +1,6 @@
 <main>
   <section>
-  <h1>Blogify Users</h1>
+  <h1 class="createTitle">Blogify Users</h1>
     <ul class="card-container">
       <% @users.each do |user| %>
         <%= link_to user do %>
@@ -11,7 +11,7 @@
               </div>
               <div class="user-information">
                 <h2><%= user.name %></h2>
-                <p>Number of posts: <%= user.posts_counter %></p>
+                <p>Number of posts: <%= user.posts_counter || 0 %></p>
               </div>
             </div>
           </li>

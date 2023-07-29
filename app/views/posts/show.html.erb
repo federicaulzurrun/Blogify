@@ -19,5 +19,23 @@
         <% end %>
       </ul>
     </div>
+      <div class="interaction">
+        <%= form_with(model: [@post, Comment.new], url: user_post_comments_path(@post.author, @post)) do |form|%>
+          <div class="postContP">
+            <h4 class= "addCom">Add a Comment</h4>
+            <div>
+              <%= form.text_area :text, required: true %>
+            </div>
+          </div>
+          <div class="shareIt">
+            <%= form.submit 'Share it!', class: "btn" %>
+          </div>
+        <% end %>
+        <div class="likeBtn">
+          <%= form_with(url: user_post_likes_path(@post.author, @post), method: :post) do |form| %>
+            <%= form.submit 'Like', class: "btn"%>
+          <% end %>        
+        </div>
+      </div>
   </section>
 </main>

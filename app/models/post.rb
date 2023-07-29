@@ -9,10 +9,7 @@ class Post < ApplicationRecord
 
   after_create :update_posts_counter
   after_create :initialize_comments_counter
-
-  def update_posts_counter
-    author.update(posts_counter: author.posts.count)
-  end
+  before_validation :set_default_counters
 
   def recent_comments
     comments.order(created_at: :desc).limit(5)
@@ -20,7 +17,16 @@ class Post < ApplicationRecord
 
   private
 
+  def update_posts_counter
+    author.update(posts_counter: author.posts.count)
+  end
+
   def initialize_comments_counter
-    update(comments_counter: 0)
+    update(comments_counter: 0, likes_counter: 0)
+  end
+
+  def set_default_counters
+    self.comments_counter ||= 0
+    self.likes_counter ||= 0
   end
 end

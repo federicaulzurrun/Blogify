@@ -161,7 +161,48 @@ a {
 .postCountersP {
   font-size: 0.5rem;
   display: flex;
-  width: 30%;
+  width: 35%;
   justify-content: end;
   align-self: flex-start;
+}
+
+.interaction {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+form {
+  width: 100%;
+  display: flex;
+}
+
+.addCom {
+  padding: 4px 0;
+}
+
+.shareIt {
+  display: flex;
+  align-self: center;
+}
+
+.likeBtn {
+  margin-left: 20px;
+}
+
+.createTitle {
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.formAdd {
+  display: flex;
+  flex-direction: column;
+  margin: 5px 50px;
+  width: 80%;
+}
+
+.formAdd input,
+.formAdd label {
+  padding: 5px;
 }
