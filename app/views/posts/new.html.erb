@@ -1,0 +1,13 @@
+
+<main class="card">
+  <h2 class="createTitle">Create a Post</h2>
+  <section class="postContP">
+    <%= form_with(model: @post, url: user_posts_path(@user), class:"formAdd") do |form| %>
+      <%= form.label :title %>
+      <%= form.text_field :title, required: true %>
+      <%= form.label :text %>
+      <%= form.text_area :text, required: true %>
+      <%= form.submit 'Create Post', class: "btn" %>
+    <% end %>
+  </section>
+</main>

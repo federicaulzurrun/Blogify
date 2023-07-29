@@ -19,5 +19,15 @@
         <% end %>
       </ul>
     </div>
+      <div class="interaction">
+      <div class="likeBtn">
+        <div class="shareIt">
+          <%= link_to 'Add a Comment', new_user_post_comment_path(@post.author, @post), class: "btn" %>
+        </div>
+          <%= form_with(url: user_post_likes_path(@post.author, @post), method: :post) do |form| %>
+            <%= form.submit 'Like', class: "btn"%>
+          <% end %>
+        </div>
+      </div>
   </section>
 </main>
