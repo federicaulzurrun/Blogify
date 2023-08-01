@@ -48,11 +48,10 @@ RSpec.describe 'User Index', type: :system do
 
     click_link 'Federica Ulzurrun'
     expect(page).to have_current_path(user_path(user1))
-    
+
     visit users_path
 
     click_link 'Nshanji Hilary Ndzi'
     expect(page).to have_current_path(user_path(user2))
   end
 end
-
