@@ -1,36 +1,44 @@
 require 'rails_helper'
 
-RSpec.describe UsersController, type: :request do
-  describe 'GET #index' do
-    before { get users_path }
-
-    it 'returns a successful response' do
-      expect(response).to be_successful
-    end
-
-    it 'renders the correct template' do
-      expect(response).to render_template(:index)
-    end
-
-    it 'includes the correct placeholder text in the response body' do
-      expect(response.body).to match('All blogifyers')
-    end
+RSpec.describe '/users', type: :request do
+  let(:user1) do
+    User.create(
+      name: 'Federica Ulzurrun',
+      photo: 'https://unsplash.com/es/fotos/fIq0tET6llw',
+      bio: 'Student - Developer',
+      posts_counter: 0
+    )
   end
 
-  describe 'Get #show' do
-    it 'returns a successful response' do
-      get '/users/:id'
-      expect(response).to be_successful
+  let(:user2) do
+    User.create(
+      name: 'Nshanji Hilary Ndzi',
+      photo: 'https://unsplash.com/es/fotos/obyYZVKwCNI',
+      bio: 'Developer',
+      posts_counter: 0
+    )
+  end
+
+  before do
+    user1
+    user2
+  end
+
+  describe 'GET/index' do
+    it 'Displays all Blogify Users' do
+      get '/'
+      expect(response).to render_template 'users/index'
+      expect(response.body).to include('Federica Ulzurrun')
+      expect(response.body).to include('Nshanji Hilary Ndzi')
     end
 
-    it 'renders the correct template' do
-      get '/users/:id'
-      expect(response).to render_template(:show)
-    end
-
-    it 'includes the correct placeholder text in the response body' do
-      get '/users/:id'
-      expect(response.body).to match('Users Page')
+    describe 'GET/show' do
+      it 'Displays details for a given user' do
+        get "/users/#{user1.id}"
+        expect(response).to render_template 'users/show'
+        expect(response.body).to include('Federica Ulzurrun')
+        expect(response.body).to include('Student - Developer')
+      end
     end
   end
 end

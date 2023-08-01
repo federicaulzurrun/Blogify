@@ -136,6 +136,10 @@ To deploy the project locally, run the following command:
 - Twitter: [@ulzurrunfede](https://mobile.twitter.com/ulzurrunfede)
 - LinkedIn: [Federica Ulzurrun](https://www.linkedin.com/in/federicaulzurrun/)
 
+👤 **Nshanji Hilary Ndzi**
+- GitHub: [@dazehinn](https://github.com/dazehinn)
+- Twitter: [@HilarNdzi](https://twitter.com/hilaryndzi)
+- LinkedIn: [Nshanji Hilary Ndzi](https://www.linkedin.com/in/nshanji-hilary-ndzi/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
