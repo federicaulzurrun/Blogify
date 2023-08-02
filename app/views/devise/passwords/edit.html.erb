@@ -1,0 +1,27 @@
+<div class= "singUp">
+  <div class="singTitle">
+    <h2 class="postText">Change your password</h2>
+  </div>
+
+  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put, class: 'singUpForm' } ) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+    <%= f.hidden_field :reset_password_token %>
+
+    <div class="imputField">
+      <%= f.label :password, "New password", class: "inputFieldDescP" %><br />
+      <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %> characters minimum)</em><br />
+      <% end %>
+      <%= f.password_field :password, autofocus: true, autocomplete: "new-password" %>
+    </div>
+
+    <div class="imputField">
+      <%= f.label :password_confirmation, "Confirm new password" %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Change my password", class: "btn submit-btn" %>
+    </div>
+  <% end %>
+</div>

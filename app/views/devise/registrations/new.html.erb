@@ -1,0 +1,36 @@
+<div class= "singUp">
+  <div class="singTitle">
+    <h2 class="postText">Sign up</h2>
+  </div>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :post, class: 'singUpForm' }) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+    <div class="imputField">
+      <%= f.label :email, class: "imputFieldDesc" %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    </div>
+
+    <div class="imputField">
+      <%= f.label :name, class: "imputFieldDesc" %><br />
+      <%= f.text_field :name %>
+    </div>
+
+    <div class="imputField">
+      <%= f.label :password, class: "imputFieldDesc" %>
+      <% if @minimum_password_length %>
+      <em class= "imputFieldDescP">(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "new-password" %>
+    </div>
+
+    <div class="imputField">
+      <%= f.label :password_confirmation,  %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Sign up", class: "btn submit-btn" %>
+    </div>
+  <% end %>
+  <%= render "devise/shared/links" %>
+</div>

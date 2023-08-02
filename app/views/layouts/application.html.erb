@@ -10,6 +10,21 @@
   </head>
 
   <body>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <header class="card header">
+      <h1>Blogify</h1>    
+      <div class="buttonsHeader">
+        <% if user_signed_in? %>
+          <%= link_to current_user.name, user_posts_path(current_user), class:"btn navbar-btn" %>
+          <%= button_to 'Edit your profile', edit_user_registration_path, method: :get, class:"btn navbar-btn" %>
+          <%= button_to "Sign out", destroy_user_session_path, method: :delete, class:"btn navbar-btn" %>
+        <% else %>
+          <%= button_to "Log in", new_user_session_path, class:"btn navbar-btn" %>
+          <%= button_to 'Sign up', new_user_registration_path, method: :get,class:"btn navbar-btn" %>
+        <% end %>
+      </div>
+    </header>
     <%= yield %>
   </body>
 </html>

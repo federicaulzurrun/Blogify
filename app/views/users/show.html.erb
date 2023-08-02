@@ -2,7 +2,11 @@
   <section class="card">
   <div class="userContainer"> 
     <div class="photo-container">
-      <%= image_tag @user.photo, class: "user-photo" %>
+      <%if @user.photo.present? %>
+        <%= image_tag @user.photo, class: "user-photo" %>
+      <% else %>
+
+      <% end %>
     </div>
     <div class="user-information">
       <h1><%= @user.name %></h1>

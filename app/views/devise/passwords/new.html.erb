@@ -1,0 +1,19 @@
+<div class= "singUp">
+  <div class="singTitle">
+    <h2>Forgot your password?</h2>
+  </div>
+
+  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, class: 'singUpForm' }) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+    <div class="imputField newPass">
+    <%= f.label :email, "Enter your email address to search for your account", class: "imputFieldDesc" %>
+    <br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Recover my account", class: "btn submit-btn" %>
+    </div>
+  <% end %>
+</div>

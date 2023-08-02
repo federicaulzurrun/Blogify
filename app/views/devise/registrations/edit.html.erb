@@ -1,0 +1,48 @@
+<div class= "singUp">
+  <div class="singTitle">
+    <h2 class="title">Edit <%= resource_name.to_s.humanize %></h2>
+  </div>
+
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name),  html: { class: 'singUpForm' }) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+    <div class="imputField">
+      <%= f.label :email, class: "imputFieldDesc"%><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    </div>
+
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+    <% end %>
+
+    <div class="imputField">
+      <%= f.label :password, class: "imputFieldDesc"%> <i class= "imputFieldDescP">Create a new one</i><br />
+      <%= f.password_field :password, autocomplete: "new-password" %>
+      <% if @minimum_password_length %>
+        <em class= "imputFieldDescP"><%= @minimum_password_length %> characters minimum</em>
+      <% end %>
+    </div>
+
+    <div class="imputField">
+      <%= f.label :password_confirmation, class: "imputFieldDesc" %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    </div>
+
+    <div class="imputField">
+      <%= f.label :current_password, class: "imputFieldDesc" %> <i class= "imputFieldDescP">write your previous one to confirm the changes</i><br />
+      <%= f.password_field :current_password, autocomplete: "current-password" %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Update", class: 'btn' %>
+    </div>
+  <% end %>
+
+  <div class="footerSingUpEdit">
+    <h4 class="subtitle"> Want to cancel your account? </h4>
+    <%= button_to "Cancel the account", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete, class: 'btn' %>
+  </div>
+
+  <%= button_to "Back", root_path, method: :get, class: 'btn back' %>
+
+</div>
