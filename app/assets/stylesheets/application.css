@@ -58,8 +58,8 @@ a {
 
 .btn {
   background-color: #f9f9f9;
+  border: 2px solid #000 !important;
   color: #000;
-  border: none;
   border-radius: 4px;
   padding: 8px 12px;
   cursor: pointer;
@@ -91,6 +91,7 @@ a {
 .card-container {
   width: 90%;
   margin: 5%;
+  padding: 5px;
 }
 
 .card {
@@ -207,4 +208,136 @@ form {
 .formAdd input,
 .formAdd label {
   padding: 5px;
+}
+
+/* Sing Up */
+.singUp {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  justify-content: center;
+  align-items: center;
+  margin: 5%;
+  gap: 6px;
+}
+
+.singTitle {
+  width: 90%;
+  align-self: center;
+  text-align: center;
+}
+
+.singTitle .postText {
+  text-transform: capitalize;
+  letter-spacing: 1px;
+}
+
+.singUpForm {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+}
+
+.imputField {
+  width: 90%;
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  align-items: center;
+}
+
+.imputField input {
+  margin-left: 5px;
+  background-color: #fff;
+  border: 1px solid #000;
+  width: 80%;
+  height: 30px;
+}
+
+.imputFieldDesc {
+  font-size: 1rem;
+  text-transform: uppercase;
+  align-self: flex-start;
+  padding-left: 10%;
+  font-weight: bold;
+}
+
+.imputFieldDescP {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  align-self: flex-start;
+  padding-left: 10%;
+}
+
+.singUp a {
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.3s ease;
+  margin-top: 10px;
+  color: #000;
+}
+
+.singUp a:hover {
+  background-color: lightcoral;
+}
+
+.footerSingUpEdit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
+  justify-content: center;
+}
+
+.button_to {
+  width: 100%;
+  align-self: center;
+  display: flex;
+  justify-content: center;
+}
+
+.actions {
+  margin-top: 1%;
+}
+
+.rememberMe {
+  font-size: 1rem;
+  text-transform: uppercase;
+  align-self: flex-start;
+  padding-left: 15%;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.buttonsHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-self: flex-start;
+  align-items: flex-start;
+}
+
+.buttonsHeader .button_to {
+  width: 100%;
+  justify-content: flex-end;
+}
+
+.navbar-btn {
+  width: 105%;
+  padding: 1px;
+  border: 0;
+}
+
+.newPass {
+  margin-top: 25px;
 }

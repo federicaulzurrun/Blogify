@@ -7,7 +7,11 @@
           <li class="postCont">
             <div class="usersCont">
               <div class="photo-container">
-              <%= image_tag user.photo, class: "user-photo" %>
+                <%if user.photo.present? %>
+                  <%= image_tag user.photo, class: "user-photo" %>
+                <% else %>
+
+                <% end %>
               </div>
               <div class="user-information">
                 <h2><%= user.name %></h2>
