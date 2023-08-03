@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, only: %i[create destroy]
   load_and_authorize_resource
-  before_action :set_user, only: [:new, :create]
+  before_action :set_user, only: %i[new create]
 
   def index
     @user = User.find(params[:user_id])

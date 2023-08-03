@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!, only: %i[create destroy]
   load_and_authorize_resource
-  
+
   def create
     @post = Post.find(params[:post_id])
     @comment = @post.comments.build(comment_params)
@@ -26,6 +26,7 @@ class CommentsController < ApplicationController
     @comment.destroy!
     redirect_to user_post_path(id: @post.id), notice: 'Comment deleted'
   end
+
   private
 
   def comment_params
