@@ -14,20 +14,31 @@
 
     <div class="postContP">
       <ul>
-        <% @post.comments.includes(:author).each do |comment| %>
+        <% @post.comments.includes(:author).includes(:post).each do |comment| %>
           <p class="contText"><%= comment.author.name %>: <%= comment.text %></p>
+          <% if can? :destroy, comment %>
+            <%= button_to "Delete Comment", user_post_comment_path(user_id: @post.author_id, post_id: @post.id, id: comment.id), method: :delete, class: "btn delete" %>
+          <% end %>
         <% end %>
       </ul>
     </div>
-      <div class="interaction">
+    <div class="interaction">
       <div class="likeBtn">
         <div class="shareIt">
-          <%= link_to 'Add a Comment', new_user_post_comment_path(@post.author, @post), class: "btn" %>
-        </div>
-          <%= form_with(url: user_post_likes_path(@post.author, @post), method: :post) do |form| %>
-            <%= form.submit 'Like', class: "btn"%>
+          <% if user_signed_in? %>
+            <%= link_to 'Add a Comment', new_user_post_comment_path(@post.author, @post), class: "btn" %>
           <% end %>
         </div>
+        <% if user_signed_in? %>
+          <%= form_with(url: user_post_likes_path(@post.author, @post), method: :post) do |form| %>
+            <%= form.submit 'Like', class: "btn" %>
+          <% end %>
+        <% end %>
       </div>
+      <% if user_signed_in? && can?(:destroy, @post) %>
+        <%= button_to 'Delete post', user_post_path(@post.author, @post), method: :delete, class: "btn delete" %>
+      <% end %>
+    </div>
+  
   </section>
 </main>

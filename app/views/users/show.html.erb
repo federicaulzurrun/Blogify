@@ -21,9 +21,6 @@
   </section>
 
   <section>
-    <div class="btn-container">
-      <%= link_to 'Create a New Post', new_user_post_path(@user), class: "btn" %>
-    </div>
     <ul>
       <% @user.last_posts.each do |post| %>
         <li class="postCont">
