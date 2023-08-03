@@ -12,4 +12,5 @@ class Ability
       can :update, Post, author_id: user.id
       can :destroy, [Comment, Post], author_id: user.id
     end
+  end
 end
