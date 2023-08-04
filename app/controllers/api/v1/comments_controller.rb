@@ -12,7 +12,7 @@ class Api::V1::CommentsController < ApplicationController
     user = current_user
     post = Post.find(params[:post_id])
     new_comment = post.comments.new(comment_params.merge(author: user))
-  
+
     if new_comment.save
       render json: { success: 'Comment added!' }
     else
@@ -44,7 +44,7 @@ class Api::V1::CommentsController < ApplicationController
   end
 
   def decoded_auth_token
-    token = request.headers['Authorization'].to_s.split(' ').last
+    token = request.headers['Authorization'].to_s.split.last
     JWT.decode(token, Rails.application.secret_key_base)[0]
   end
 end
