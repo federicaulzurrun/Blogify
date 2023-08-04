@@ -1,6 +1,4 @@
 class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
@@ -23,5 +21,11 @@ class User < ApplicationRecord
 
   def last_posts
     posts.order(created_at: :desc).limit(5)
+  end
+
+  after_initialize :set_default_role, if: :new_record?
+
+  def set_default_role
+    self.role ||= 'user'
   end
 end
