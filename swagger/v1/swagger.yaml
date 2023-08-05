@@ -25,30 +25,11 @@ paths:
       responses:
         '200':
           description: Successful
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  properties:
-                    id:
-                      type: integer
-                    text:
-                      type: string
-                  required:
-                  - id
-                  - text
     post:
       summary: Create a comment on a user's post
       tags:
       - Comments
-      parameters:
-      - name: X-Token
-        in: header
-        description: API token
-        required: true
-        schema:
-          type: string
+      parameters: []
       description: Your API token is generated on sign up. It is located on your user
         profile page.
       responses:
