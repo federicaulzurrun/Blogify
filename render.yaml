@@ -17,8 +17,8 @@ services:
         fromDatabase:
           name: postgres
           property: connectionString
-  - type: web
-    name: web
+  - type: redis
+    name: redis
     ipAllowList: []
     plan: free
     maxmemoryPolicy: noeviction
