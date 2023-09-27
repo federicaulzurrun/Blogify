@@ -84,6 +84,4 @@ test:
 #
 production:
   <<: *default
-  database: Blogify_production
-  username: Blogify
-  password: <%= ENV["BLOGIFY_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
