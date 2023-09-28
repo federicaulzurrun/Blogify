@@ -70,7 +70,7 @@ main {
 }
 
 .btn {
-  background-color: #FFC0CB;
+  background-color: #ffc0cb;
   border: none;
   color: #000;
   border-radius: 4px;
@@ -134,7 +134,7 @@ main {
   align-items: center;
   justify-content: space-between;
   margin: 0 3%;
-  border: 1px solid #615f9b;;
+  border: 1px solid #615f9b;
   padding: 2%;
   color: #2c2f83;
 }
@@ -146,7 +146,7 @@ main {
 .biography {
   margin: 5%;
   width: 90%;
-  border: 1px solid #615f9b;;
+  border: 1px solid #615f9b;
   padding: 2%;
 }
 
@@ -269,7 +269,7 @@ form {
 .imputField input {
   margin-left: 5px;
   background-color: #fff;
-  border: 1px solid #615f9b;;
+  border: 1px solid #615f9b;
   width: 80%;
   height: 30px;
 }
@@ -355,7 +355,7 @@ form {
   width: 105%;
   padding: 1px;
   border: 0;
-  background-color: #FFC0CB;
+  background-color: #ffc0cb;
 }
 
 .newPass {
