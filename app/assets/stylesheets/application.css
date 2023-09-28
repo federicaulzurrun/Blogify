@@ -3,7 +3,7 @@
   padding: 0;
   scroll-behavior: smooth;
   box-sizing: border-box;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Nunito', sans-serif;
 }
 
 li {
@@ -13,6 +13,19 @@ li {
 a {
   text-decoration: none;
   color: black;
+}
+
+main {
+  background-color: #feeee3;
+  padding: 8% 0;
+  height: 100%;
+  color: #2c2f83;
+}
+
+.header-title {
+  color: #feeee3;
+  padding-left: 15%;
+  font-size: 2.5rem;
 }
 
 .postContainer {
@@ -57,8 +70,8 @@ a {
 }
 
 .btn {
-  background-color: #f9f9f9;
-  border: 2px solid #000 !important;
+  background-color: #FFC0CB;
+  border: none;
   color: #000;
   border-radius: 4px;
   padding: 8px 12px;
@@ -66,6 +79,8 @@ a {
   font-size: 1rem;
   transition: 0.3s ease;
   margin-top: 10px;
+  text-align: center;
+  width: 100%;
 }
 
 .btn:hover {
@@ -96,9 +111,9 @@ a {
 
 .card {
   padding: 3%;
-  background-color: #fff;
+  background-color: #feeee3;
   border-radius: 2px;
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 10px rgba(44, 47, 131, 0.8);
   margin: 20px auto;
   transition: transform 0.3s ease;
   cursor: pointer;
@@ -109,7 +124,7 @@ a {
 }
 
 .photo-container {
-  border: 1px solid black;
+  border: 1px solid #615f9b;
   height: 5em;
   width: 5em;
 }
@@ -119,8 +134,9 @@ a {
   align-items: center;
   justify-content: space-between;
   margin: 0 3%;
-  border: 1px solid black;
+  border: 1px solid #615f9b;;
   padding: 2%;
+  color: #2c2f83;
 }
 
 .user-information p {
@@ -130,21 +146,21 @@ a {
 .biography {
   margin: 5%;
   width: 90%;
-  border: 1px solid black;
+  border: 1px solid #615f9b;;
   padding: 2%;
 }
 
 .postCont {
-  background-color: #fff;
-  border: 1px solid #000;
+  background-color: #feeee3;
+  border: 1px solid #615f9b;
   border-radius: 2px;
   padding: 15px;
   margin: 5px 20px;
 }
 
 .postContP {
-  background-color: #fff;
-  border: 1px solid #000;
+  background-color: #feeee3;
+  border: 1px solid #615f9b;
   border-radius: 2px;
   padding: 20px;
   margin: 8px 20px;
@@ -253,7 +269,7 @@ form {
 .imputField input {
   margin-left: 5px;
   background-color: #fff;
-  border: 1px solid #000;
+  border: 1px solid #615f9b;;
   width: 80%;
   height: 30px;
 }
@@ -317,14 +333,17 @@ form {
   flex-direction: row;
   width: 100%;
   justify-content: space-between;
+  background-color: #615f9b;
+  margin: 0;
 }
 
 .buttonsHeader {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 10px;
   align-self: flex-start;
   align-items: flex-start;
+  width: 30%;
 }
 
 .buttonsHeader .button_to {
@@ -336,6 +355,7 @@ form {
   width: 105%;
   padding: 1px;
   border: 0;
+  background-color: #FFC0CB;
 }
 
 .newPass {

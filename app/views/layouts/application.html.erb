@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Nunito:wght@400;500;600&display=swap" rel="stylesheet">
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
   </head>
 
@@ -13,7 +16,7 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <header class="card header">
-      <h1>Blogify</h1>    
+      <h1 class="header-title">Blogify</h1>    
       <div class="buttonsHeader">
         <% if user_signed_in? %>
           <%= link_to current_user.name, user_posts_path(current_user), class:"btn navbar-btn" %>
